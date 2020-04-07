@@ -1,6 +1,6 @@
 # daily-frontend
 
-![image](https://user-images.githubusercontent.com/55299906/78704714-e4c78380-78d1-11ea-9b01-9dfd07e33468.png)
+![image](https://user-images.githubusercontent.com/55299906/78705074-89e25c00-78d2-11ea-98d6-4b8f67e1e837.png)
 
 ## Project setup
 ```
