@@ -1,5 +1,7 @@
 # daily-frontend
 
+![image](https://user-images.githubusercontent.com/55299906/78704714-e4c78380-78d1-11ea-9b01-9dfd07e33468.png)
+
 ## Project setup
 ```
 npm install
