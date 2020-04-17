@@ -1,11 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <v-app> 
+    <v-toolbar color="primary">
+      <v-toolbar-title class="ml-6">
+        Logobussines
+      </v-toolbar-title>
+       
+       <v-btn text color="white" x-large class="ml-6">
+       Home
+      </v-btn>
+      <v-btn text color="white" x-large class="ml-6">
+      About
+      </v-btn>
+      <v-btn text  color="white" x-large class="ml-6">
+      Corportive
+      </v-btn>
+      <v-btn text  color="white" x-large class="ml-6">
+      Plans
+      </v-btn>
+
+    <v-spacer></v-spacer>
+      <v-btn rounded color="#1779ba" class="mr-6">
+      <v-icon  color="white">person_outline</v-icon>
+      <span  class="white--text">Login </span>
+      </v-btn>
+
+    </v-toolbar>
+    <v-content>
     <router-view/>
-  </div>
+    </v-content>
+  </v-app>
 </template>
 
 <style>
