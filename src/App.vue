@@ -1,42 +1,43 @@
 <template>
 <v-app>
-  <v-row>
-     <v-toolbar color="primary">
-      <v-toolbar-title class="ml-6">
-        Logobussines
-      </v-toolbar-title>
-       
-       <router-link to="/">
-       <v-btn text color="white" x-large class="ml-6">
-       Home
-      </v-btn>
-      </router-link>
-      <v-btn text color="white" x-large class="ml-6">
-      About
-      </v-btn>
-      <v-btn text  color="white" x-large class="ml-6">
-      Corportive
-      </v-btn>
-      <v-btn text  color="white" x-large class="ml-6">
-      Plans
-      </v-btn>
-
-    <v-spacer></v-spacer>
-      <v-btn rounded color="#1779ba" class="mr-6">
-        <router-link to="/login">
-      <v-icon  color="white">person_outline</v-icon>
-      <span  class="white--text">Login </span>
-        </router-link>
-      </v-btn>
-
-    </v-toolbar>
-    </v-row> 
-   
+  <div v-if="session">
+<HeaderLogged></HeaderLogged>
+  </div>
+  <div v-else>
+<Header></Header>
+  </div>
+    
+    
     <v-content>
     <router-view/>
     </v-content>
   </v-app>
 </template>
+
+<script>
+export default {
+  name:'App',
+  data(){
+    return{
+      session:Boolean
+    }
+  },
+  updated(){
+    console.log('updates');
+    this.session=this.getSession();
+    console.log('App',this.session);
+  },
+  components:{
+    Header: () => import('./views/Header'),
+    HeaderLogged: () => import('./views/users/Header')
+  },
+  methods:{
+    getSession:function(){
+      return localStorage.getItem('auth');
+    }
+  }
+}
+</script>
 
 <style>
 #app {

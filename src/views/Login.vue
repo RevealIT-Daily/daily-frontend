@@ -24,13 +24,16 @@
                          ></v-text-field>   
                         
                         
-                        <v-text-field label="Password"  type="password"
+                        <v-text-field label="Password"   type="password"
                          class="mt-8 pl-2 pr-2"
                         prepend-icon="enhanced_encryption"></v-text-field>
-                        <v-btn x-medium color="#1779ba" class="mt-8 mb-6">
+
+                        
+                        <v-btn x-medium color="#1779ba"  v-on:click="login" class="mt-8 mb-6">
                         <v-icon  color="white">person_outline</v-icon>
                         <span  class="white--text">Login </span>
                         </v-btn>
+                        
                     </v-card-text>
                      <div class="text-center">
                         <b> Don't have an account yet? </b> 
@@ -51,3 +54,17 @@
     </v-container>
     </div>
 </template>
+
+<script>
+export default {
+    methods:{
+        login: function (){
+            
+            localStorage.setItem('auth',true);
+                this.$router.push('/Loggedin');
+                
+
+        }
+    }
+}
+</script>
