@@ -27,6 +27,11 @@ Vue.use(VueRouter)
     path: '/Signup',
     name: 'signup',
     component: () => import(/*webpackChunkName: "login"*/ '../views/Signup.vue')
+  },
+  {
+    path: '/Loggedin',
+    name: 'loggedin',
+    component: () => import(/*webpackChunkName: "loggedin"*/ '../views/users/Loggedin.vue')
   }
 ]
 
