@@ -18,15 +18,15 @@
                             </v-row>
                         </v-card-title>
                         <v-card-text>
-                                     <v-text-field label="Email" :rules="rules" hide-details="auto" 
+                                     <v-text-field label="Email" hide-details="auto" 
                                      class="mt-6 pl-2 pr-2"
                                     prepend-inner-icon="mail"
                                     ></v-text-field>  
-                                    <v-text-field label="Password" :rules="rules" hide-details="auto" type="password"
+                                    <v-text-field label="Password" hide-details="auto" type="password"
                                      class="mt-8 pl-2 pr-2"
                                     prepend-inner-icon="enhanced_encryption"></v-text-field> 
                                     <v-text-field 
-                                    label="Confirm Password" :rules="rules" hide-details="auto" type="password"
+                                    label="Confirm Password"  hide-details="auto" type="password"
                                      class="mt-8 pl-2 pr-2"
                                     prepend-inner-icon="enhanced_encryption"></v-text-field> 
 

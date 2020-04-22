@@ -1,20 +1,42 @@
 <template>
-<v-app>
-  <div v-if="session">
-<HeaderLogged></HeaderLogged>
-  </div>
-  <div v-else>
-<Header></Header>
-  </div>
-    
-    
-    <v-content>
+<v-app id="app">
+  <div v-if="session === null">
+        <HeaderPrincipal></HeaderPrincipal>
+      
+      <v-content>
     <router-view/>
     </v-content>
+  </div>
+
+   <div v-else>
+    <v-row>
+        <HeaderLogged ></HeaderLogged>
+      <v-col cols="xs-3  sm-4  md-8 pa-0 pl-3">
+        <v-row>
+    <v-toolbar class="primary">
+    <v-spacer></v-spacer>
+     <v-toolbar-title class="mr-6">
+        Logobussines
+      </v-toolbar-title>
+    </v-toolbar>
+        </v-row>
+        <v-row>
+          <v-col cols="xs-3  sm-5  md-8">
+          <v-content>
+              <router-view/>
+              </v-content>
+          </v-col>
+     
+        </v-row>
+      </v-col>
+    </v-row>
+  </div>
   </v-app>
 </template>
 
 <script>
+import HeaderPrincipal from './views/HeaderPrincipal';
+import HeaderLogged from './views/users/HeaderLogged';
 export default {
   name:'App',
   data(){
@@ -22,19 +44,19 @@ export default {
       session:Boolean
     }
   },
+  created(){
+     console.log(localStorage.getItem('auth'));
+    this.session=localStorage.getItem('auth');
+    console.log('App',this.session);
+  },
   updated(){
-    console.log('updates');
-    this.session=this.getSession();
+    console.log(localStorage.getItem('auth'));
+    this.session=localStorage.getItem('auth');
     console.log('App',this.session);
   },
   components:{
-    Header: () => import('./views/Header'),
-    HeaderLogged: () => import('./views/users/Header')
-  },
-  methods:{
-    getSession:function(){
-      return localStorage.getItem('auth');
-    }
+    HeaderPrincipal,
+    HeaderLogged
   }
 }
 </script>
