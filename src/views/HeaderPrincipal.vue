@@ -28,14 +28,19 @@
       <span  class="white--text">Login </span>
         </router-link>
       </v-btn>
-
     </v-toolbar>
-    </v-row>     
+    </v-row>
     </div>
+    
 </template>
 
 <script>
 export default {
-    name:'header'
+    name:'headerprincipal'
 }
 </script>
+<style scoped>
+#sheetHeight{
+    width: 100%;
+}
+</style>

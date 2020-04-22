@@ -52,6 +52,10 @@
                 </v-col>
             </v-row>
     </v-container>
+       
+     <v-content>
+    <router-view :key="$route.fullPath"/>
+    </v-content>
     </div>
 </template>
 
@@ -61,7 +65,8 @@ export default {
         login: function (){
             
             localStorage.setItem('auth',true);
-                this.$router.push('/Loggedin');
+            localStorage.getItem('auth')
+            this.$router.push('/Loggedin');
                 
 
         }

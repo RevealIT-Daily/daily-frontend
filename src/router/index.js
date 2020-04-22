@@ -32,6 +32,12 @@ Vue.use(VueRouter)
     path: '/Loggedin',
     name: 'loggedin',
     component: () => import(/*webpackChunkName: "loggedin"*/ '../views/users/Loggedin.vue')
+  },
+  {
+    path: '/users/profile',
+    name: 'profile',
+    component: () => import(/*webpackChunkName: "profile"*/ '../views/users/Profile.vue')
+
   }
 ]
 
