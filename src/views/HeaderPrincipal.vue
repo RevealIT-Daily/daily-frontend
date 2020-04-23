@@ -1,16 +1,13 @@
 <template>
     <div>
          <v-row>
-     <v-toolbar color="primary" >
+     <v-toolbar color="primary">
       <v-toolbar-title class="ml-6">
         Logobussines
-      </v-toolbar-title>
-       
-       <router-link to="/">
-       <v-btn text color="white" x-large class="ml-6">
+      </v-toolbar-title >
+       <v-btn text color="white"  x-large to="/">
        Home
       </v-btn>
-      </router-link>
       <v-btn text color="white" x-large class="ml-6">
       About
       </v-btn>
@@ -20,13 +17,12 @@
       <v-btn text  color="white" x-large class="ml-6">
       Plans
       </v-btn>
+       
 
     <v-spacer></v-spacer>
-      <v-btn rounded color="#1779ba" class="mr-6">
-        <router-link to="/login">
+      <v-btn rounded color="#1779ba" class="mr-6" to="/login">
       <v-icon  color="white">person_outline</v-icon>
       <span  class="white--text">Login </span>
-        </router-link>
       </v-btn>
     </v-toolbar>
     </v-row>
@@ -43,4 +39,6 @@ export default {
 #sheetHeight{
     width: 100%;
 }
+
+
 </style>
