@@ -71,16 +71,19 @@ export default {
 }
 
 #nav {
-  padding: 30px;
+  padding: 50px;
 }
 
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+
+
+#nav a.router-link-exact-active{
+  background-color: #1779ba;
 }
 
  a:link, a:visited, a:active {

@@ -27,27 +27,76 @@
             nav
             dense
           >
-          
-            <v-list-item link>
+          <div class="text-center">
+            <v-list-item link to="/">
               <v-list-item-icon>
                 <v-icon>home</v-icon>
               </v-list-item-icon>
               <v-list-item-title><h4> Home </h4></v-list-item-title>
             </v-list-item>
-            <router-link to="/users/profile">
-            <v-list-item link>
+            
+            <v-list-item link to="/users/profile">
               <v-list-item-icon>
                 <v-icon>person</v-icon>
               </v-list-item-icon>
               <v-list-item-title><h4>Profile</h4></v-list-item-title>
             </v-list-item>
-            </router-link>
-            <v-list-item link @click="logout">
+    <v-menu
+      :nudge-width="20"
+      offset-x>
+      <template v-slot:activator="{ on }">
+      <v-list-item v-on="on">
+              <v-list-item-icon>
+                <v-icon>assignment</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title><h4>Boards</h4></v-list-item-title>
+              </v-list-item>
+      </template>
+
+      
+       <v-list>
+       <div class="text-center">
+            <v-list-item link to="/users/inicio">
+              <v-list-item-icon>
+                <v-icon>assignment</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title><h4> Inicio </h4></v-list-item-title>
+            </v-list-item>
+            
+            <v-list-item link>
+              <v-list-item-icon>
+                <v-icon>assignment</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title><h4>Planeación</h4></v-list-item-title>
+            </v-list-item>
+            <v-list-item link>
+              <v-list-item-icon>
+                <v-icon>assignment</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title><h4>Ejecución</h4></v-list-item-title>
+            </v-list-item>
+            <v-list-item link >
+              <v-list-item-icon>
+                <v-icon>assignment</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title><h4>Control</h4></v-list-item-title>
+            </v-list-item>
+            <v-list-item link >
+              <v-list-item-icon>
+                <v-icon>assignment</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title><h4>Cierre</h4></v-list-item-title>
+            </v-list-item>
+       </div>
+      </v-list>
+    </v-menu>
+            <v-list-item link @click="logout" >
               <v-list-item-icon>
                 <v-icon>logout</v-icon>
               </v-list-item-icon>
               <v-list-item-title> <h4>Logout</h4> </v-list-item-title>
             </v-list-item>
+            </div>
           </v-list>
         </v-navigation-drawer>
 </template>
@@ -65,12 +114,14 @@ export default {
         }
     },
      data () {
-      return {
-        // items: [
-        //   { title: 'Home', icon: 'dashboard' },
-        //   { title: 'About', icon: 'question_answer' },
-        //   { title: 'Logout', icon: 'logout' },
-        // ],
+      return { 
+        items: [
+        { title: 'inicio' },
+        { title: 'Planeación' },
+        { title: 'Ejecución' },
+        { title: 'Control' },
+        { title: 'Cierre' },
+      ],
       }
     },
 

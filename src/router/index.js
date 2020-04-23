@@ -38,6 +38,11 @@ Vue.use(VueRouter)
     name: 'profile',
     component: () => import(/*webpackChunkName: "profile"*/ '../views/users/Profile.vue')
 
+  },
+  {
+    path: '/users/inicio',
+    name: 'inicio',
+    component: () => import(/*webpackChunkName: "board"*/ '../views/users/Start.vue')
   }
 ]
 
