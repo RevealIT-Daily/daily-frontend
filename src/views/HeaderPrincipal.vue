@@ -5,10 +5,10 @@
       <v-toolbar-title class="ml-6">
         Logobussines
       </v-toolbar-title >
-       <v-btn text color="white"  x-large to="/">
+       <v-btn text color="white" class="ml-5"  x-large to="/">
        Home
       </v-btn>
-      <v-btn text color="white" x-large class="ml-6">
+      <v-btn text color="white" x-large class="ml-6" to="/about">
       About
       </v-btn>
       <v-btn text  color="white" x-large class="ml-6">

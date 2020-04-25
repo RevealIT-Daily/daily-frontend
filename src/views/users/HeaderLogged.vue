@@ -41,51 +41,46 @@
               </v-list-item-icon>
               <v-list-item-title><h4>Profile</h4></v-list-item-title>
             </v-list-item>
-    <v-menu
-      :nudge-width="20"
-      offset-x>
-      <template v-slot:activator="{ on }">
-      <v-list-item v-on="on">
+    
+      <v-list-item  link to="/users/MyProjects">
               <v-list-item-icon>
                 <v-icon>assignment</v-icon>
               </v-list-item-icon>
-              <v-list-item-title><h4>Boards</h4></v-list-item-title>
+              <v-list-item-title><h4>My Projects</h4></v-list-item-title>
+              </v-list-item>
+      
+      <v-menu
+        offset-y>
+      <template v-slot:activator="{ on }">
+      <v-list-item v-on="on">
+              <v-list-item-icon>
+                <v-icon>settings</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title><h4>Manage</h4></v-list-item-title>
               </v-list-item>
       </template>
 
       
        <v-list>
        <div class="text-center">
-            <v-list-item link to="/users/inicio">
+            <v-list-item link to="/users/start">
               <v-list-item-icon>
                 <v-icon>assignment</v-icon>
               </v-list-item-icon>
-              <v-list-item-title><h4> Inicio </h4></v-list-item-title>
+              <v-list-item-title><h4> Status </h4></v-list-item-title>
             </v-list-item>
             
-            <v-list-item link>
+            <v-list-item link to="/users/planning">
               <v-list-item-icon>
                 <v-icon>assignment</v-icon>
               </v-list-item-icon>
-              <v-list-item-title><h4>Planeación</h4></v-list-item-title>
+              <v-list-item-title><h4>Account Type</h4></v-list-item-title>
             </v-list-item>
-            <v-list-item link>
+            <v-list-item link to="/users/execution">
               <v-list-item-icon>
                 <v-icon>assignment</v-icon>
               </v-list-item-icon>
-              <v-list-item-title><h4>Ejecución</h4></v-list-item-title>
-            </v-list-item>
-            <v-list-item link >
-              <v-list-item-icon>
-                <v-icon>assignment</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title><h4>Control</h4></v-list-item-title>
-            </v-list-item>
-            <v-list-item link >
-              <v-list-item-icon>
-                <v-icon>assignment</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title><h4>Cierre</h4></v-list-item-title>
+              <v-list-item-title><h4>Default Roles</h4></v-list-item-title>
             </v-list-item>
        </div>
       </v-list>
@@ -108,7 +103,7 @@ export default {
     name:'HeaderLogged',
     methods:{
         logout: function(){
-            console.log('Aqui entra',this.$session);
+                
           localStorage.removeItem('auth');
             this.$router.push('/login');
         }
