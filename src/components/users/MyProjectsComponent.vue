@@ -1,41 +1,52 @@
 <template>
-    <div class="BoardComponent">
+    <div class="ExecutionComponent">
         <v-container>
             <v-row>
             <v-col cols="12"
             xs="12"
             md="12"
             sm="12">
-            </v-col>
-            </v-row>
-            <v-row>
-            <v-col>
-             <v-data-table
-    :headers="headers"
-    :items="desserts"
-    items-per-page="5"
-    sort-by="calories"
-    class="elevation-1"
-  >
-    <template v-slot:top>
-      <v-toolbar flat color="white">
-        <v-toolbar-title>My CRUD</v-toolbar-title>
-        <v-divider
-          class="mx-4"
-          inset
-          vertical
-        ></v-divider>
+            
+      
+      <v-card>
+        <v-card-title >
+        <v-toolbar flat color="white">
+
+        <v-btn color="primary" dark @click="ShowRegisterForm">New Project</v-btn>
+        
+
+      
         <v-spacer></v-spacer>
-        <v-dialog v-model="dialog" max-width="500px">
-          <template v-slot:activator="{ on }">
-            <v-btn color="primary" dark v-on="on">New Item</v-btn>
-          </template>
+
+         <v-text-field
+        v-model="search"
+        append-icon="search"
+        label="Search"
+        single-line
+        hide-details
+        color="blue"
+      >
+      
+      </v-text-field>
+        
+        </v-toolbar>
+        </v-card-title>
+
+        <v-card-text>
+
+           <v-pagination v-model="page" :length="pageCount"
+              prev-icon="arrow_left"
+              next-icon="arrow_right"
+              circle
+              class="mb-4">
+            </v-pagination>
+
+           <v-dialog v-model="dialog" max-width="500px">
           <v-card>
             <v-card-title>
-              <span class="headline">{{ formTitle }}</span>
+              <span>{{formTitle}}</span>
             </v-card-title>
-
-            <v-card-text>
+            <v-card-text >
               <v-container>
                 <v-row>
                   <v-col cols="12" sm="6" md="4">
@@ -58,57 +69,79 @@
             </v-card-text>
 
             <v-card-actions>
-              <v-spacer></v-spacer>
               <v-btn color="blue" text @click="close">Cancel</v-btn>
               <v-btn color="blue" text @click="save">Save</v-btn>
             </v-card-actions>
           </v-card>
-        </v-dialog>
-      </v-toolbar>
-    </template>
-    <template v-slot:item.actions="{ item }">
-      <v-icon
-        small
-        class="mr-2"
-        @click="editItem(item)"
-      >
-        person
-      </v-icon>
-      <v-icon
-        small
-        @click="deleteItem(item)"
-      >
-        delete
-      </v-icon>
-    </template>
-    <template v-slot:no-data>
-      <v-btn color="primary" @click="initialize">Reset</v-btn>
-    </template>
-  </v-data-table>
-            </v-col>
-            </v-row>
-        </v-container>
-    </div>
+          </v-dialog>
+           
+             <v-data-table
+             :search="search"
+                :headers="headers"
+                :items="desserts"
+                :page.sync="page"
+                  :items-per-page="itemsPerPage"
+                class="elevation-1"
+                hide-default-footer
+                @page-count="pageCount = $event"
+                
+              >
+    
+            <template v-slot:item.actions="{ item }">  
+               <v-icon
+                small
+                class="mr-2"
+                color="info"
+                @click="sendActivities(item)"
+              >
+                remove_red_eye
+              </v-icon>
+              <v-icon
+                small
+                class="mr-2"
+                color="warning"
+                @click="editItem(item)"
+              >
+                edit
+              </v-icon>
+              <v-icon
+                small
+                color="error"
+                @click="deleteItem(item)"
+              >
+                delete
+              </v-icon>
+            </template>
+        </v-data-table>
+        </v-card-text>
+        </v-card>
+    
+              </v-col>
+              </v-row>
+          </v-container>
+      </div>
 </template>
 
--table with CRUD actions using a v-dialog component for editing each row
 
 <script>
   export default {
+    name:'planingcomponent',
     data: () => ({
+      search: '',
+       page: 1,
+        pageCount: 0,
+        itemsPerPage: 6,
       dialog: false,
       headers: [
         {
-          text: 'Dessert (100g serving)',
-          align: 'start',
-          sortable: false,
+          text: 'Name',
+          align: 'center',
           value: 'name',
         },
-        { text: 'Calories', value: 'calories' },
-        { text: 'Fat (g)', value: 'fat' },
-        { text: 'Carbs (g)', value: 'carbs' },
-        { text: 'Protein (g)', value: 'protein' },
-        { text: 'Actions', value: 'actions', sortable: false },
+        { text: 'Owner', value: 'calories',  align: 'center' },
+        { text: 'Status', value: 'fat',  align: 'center' },
+        { text: 'Date', value: 'carbs',  align: 'center' },
+        { text: 'Actions', value: 'actions', align: 'center' },
       ],
       desserts: [],
       editedIndex: -1,
@@ -219,7 +252,9 @@
           },
         ]
       },
-
+        ShowRegisterForm () {
+        this.dialog = true
+      },
       editItem (item) {
         this.editedIndex = this.desserts.indexOf(item)
         this.editedItem = Object.assign({}, item)
@@ -229,6 +264,15 @@
       deleteItem (item) {
         const index = this.desserts.indexOf(item)
         confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+      },
+      sendActivities(item){
+            
+            this.$router.push({
+              name: 'start',
+              params: {id: Object.assign({}, item) },
+              query: {q:'3'}
+
+            });
       },
 
       close () {

@@ -40,9 +40,38 @@ Vue.use(VueRouter)
 
   },
   {
-    path: '/users/inicio',
-    name: 'inicio',
-    component: () => import(/*webpackChunkName: "board"*/ '../views/users/Start.vue')
+    path: '/users/start',
+    name: 'start',
+    component: () => import(/*webpackChunkName: "start"*/ '../views/users/activities/Start.vue'),
+    props: true
+    
+  },
+  {
+    path: '/users/planning',
+    name:'planning',
+    component:() => import(/*webpackChunkName: "planning" */'../views/users/activities/Planning.vue')
+  },
+  
+  {
+    path: '/users/execution',
+    name:'execution',
+    component:() => import(/*webpackChunkName: "execution" */'../views/users/activities/Execution.vue')
+  },
+  {
+    path: '/users/closing',
+    name:'closing',
+    component:() => import(/*webpackChunkName: "closing" */'../views/users/activities/Closing.vue')
+  },
+  
+  {
+    path: '/users/control',
+    name:'control',
+    component:() => import(/*webpackChunkName: "control" */'../views/users/activities/Control.vue')
+  },
+  {
+    path: '/users/myprojects',
+    name:'myprojects',
+    component:() => import(/*webpackChunkName: "control" */'../views/users/MyProjects.vue')
   }
 ]
 

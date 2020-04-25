@@ -1,5 +1,5 @@
 <template>
-    <div class="Board">
+    <div class="Start">
         <StartComponent></StartComponent>
     </div>
 </template>
@@ -7,9 +7,9 @@
 
 <script>
 
-import StartComponent from '@/components/users/StartComponent.vue'
+import StartComponent from '@/components/users/activities/StartComponent.vue'
 export default {
-    name: 'board',
+    name: 'Start',
     components:{
         StartComponent
     }
