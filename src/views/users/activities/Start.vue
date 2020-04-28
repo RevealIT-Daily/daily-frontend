@@ -7,7 +7,7 @@
 
 <script>
 
-import StartComponent from '@/components/users/activities/StartComponent.vue'
+import StartComponent from '@/components/users/activities/Start.component.vue'
 export default {
     name: 'Start',
     components:{

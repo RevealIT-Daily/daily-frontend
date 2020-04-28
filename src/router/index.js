@@ -76,7 +76,7 @@ const routes = [
   {
     path: '/users/myprojects',
     name: 'myprojects',
-    component: () => import(/*webpackChunkName: "control" */'../views/users/MyProjects.vue')
+    component: () => import(/*webpackChunkName: "myprojects" */'../views/users/MyProjects.vue')
   },
   //** USER ROUTES **//
 
@@ -85,6 +85,11 @@ const routes = [
     path: '/admin/status',
     name: 'admin/status',
     component: () => import(/*webpackChunkName: "admin/status" */'../views/admin/status/Status.vue')
+  },
+  {
+    path: '/admin/account_type',
+    name: 'admin/account_type',
+    component: () => import(/*webpackChunkName: "admin/account_type"*/'../views/admin/account_type/AccountType.vue')
   }
   //** ADMIN ROUTES **//
 ]
