@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -18,6 +18,8 @@ Vue.use(VueRouter)
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
+
+  // AUTH ROUTES //
   {
     path: '/login',
     name: 'Login',
@@ -33,6 +35,9 @@ Vue.use(VueRouter)
     name: 'loggedin',
     component: () => import(/*webpackChunkName: "loggedin"*/ '../views/users/Loggedin.vue')
   },
+  //** AUTH ROUTES **//
+
+  // USER ROUTES //
   {
     path: '/users/profile',
     name: 'profile',
@@ -44,35 +49,44 @@ Vue.use(VueRouter)
     name: 'start',
     component: () => import(/*webpackChunkName: "start"*/ '../views/users/activities/Start.vue'),
     props: true
-    
+
   },
   {
     path: '/users/planning',
-    name:'planning',
-    component:() => import(/*webpackChunkName: "planning" */'../views/users/activities/Planning.vue')
+    name: 'planning',
+    component: () => import(/*webpackChunkName: "planning" */'../views/users/activities/Planning.vue')
   },
-  
+
   {
     path: '/users/execution',
-    name:'execution',
-    component:() => import(/*webpackChunkName: "execution" */'../views/users/activities/Execution.vue')
+    name: 'execution',
+    component: () => import(/*webpackChunkName: "execution" */'../views/users/activities/Execution.vue')
   },
   {
     path: '/users/closing',
-    name:'closing',
-    component:() => import(/*webpackChunkName: "closing" */'../views/users/activities/Closing.vue')
+    name: 'closing',
+    component: () => import(/*webpackChunkName: "closing" */'../views/users/activities/Closing.vue')
   },
-  
+
   {
     path: '/users/control',
-    name:'control',
-    component:() => import(/*webpackChunkName: "control" */'../views/users/activities/Control.vue')
+    name: 'control',
+    component: () => import(/*webpackChunkName: "control" */'../views/users/activities/Control.vue')
   },
   {
     path: '/users/myprojects',
-    name:'myprojects',
-    component:() => import(/*webpackChunkName: "control" */'../views/users/MyProjects.vue')
+    name: 'myprojects',
+    component: () => import(/*webpackChunkName: "control" */'../views/users/MyProjects.vue')
+  },
+  //** USER ROUTES **//
+
+  // ADMIN ROUTES //
+  {
+    path: '/admin/status',
+    name: 'admin/status',
+    component: () => import(/*webpackChunkName: "admin/status" */'../views/admin/status/Status.vue')
   }
+  //** ADMIN ROUTES **//
 ]
 
 const router = new VueRouter({
