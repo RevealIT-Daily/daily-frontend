@@ -7,7 +7,7 @@
 
 <script>
 
-import ClosingComponent from '@/components/users/activities/ClosingComponent.vue'
+import ClosingComponent from '@/components/users/activities/Closing.component.vue'
 export default {
     name: 'Closing',
     components:{

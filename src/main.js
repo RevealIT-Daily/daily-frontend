@@ -10,7 +10,7 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 Vue.config.productionTip = false
 
 //global variable
-Vue.prototype.$session;
+
 
 new Vue({
   router,

@@ -7,7 +7,7 @@
 
 <script>
 
-import PlanningComponent from '@/components/users/activities/PlanningComponent.vue'
+import PlanningComponent from '@/components/users/activities/Planning.component.vue'
 export default {
     name: 'Planning',
     components:{

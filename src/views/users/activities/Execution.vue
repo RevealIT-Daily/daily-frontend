@@ -7,7 +7,7 @@
 
 <script>
 
-import ExecutionComponent from '@/components/users/activities/ExecutionComponent.vue'
+import ExecutionComponent from '@/components/users/activities/Execution.component.vue'
 export default {
     name: 'Execution',
     components:{

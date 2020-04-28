@@ -7,7 +7,7 @@
 
 <script>
 
-import ControlComponent from '@/components/users/activities/ControlComponent.vue'
+import ControlComponent from '@/components/users/activities/Control.component.vue'
 export default {
     name: 'Control',
     components:{

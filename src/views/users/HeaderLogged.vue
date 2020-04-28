@@ -42,7 +42,7 @@
               <v-list-item-title><h4>Profile</h4></v-list-item-title>
             </v-list-item>
     
-      <v-list-item  link to="/users/MyProjects">
+      <v-list-item  link to="/users/myprojects">
               <v-list-item-icon>
                 <v-icon>assignment</v-icon>
               </v-list-item-icon>
@@ -70,7 +70,7 @@
               <v-list-item-title><h4> Status </h4></v-list-item-title>
             </v-list-item>
             
-            <v-list-item link to="/users/planning">
+            <v-list-item link to="/admin/account_type">
               <v-list-item-icon>
                 <v-icon>assignment</v-icon>
               </v-list-item-icon>

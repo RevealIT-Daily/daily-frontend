@@ -125,7 +125,7 @@
 
 <script>
   export default {
-    name:'planingcomponent',
+    name:'MyProjects',
     data: () => ({
       search: '',
        page: 1,
