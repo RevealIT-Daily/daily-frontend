@@ -77,11 +77,15 @@ const routes = [
     path: '/users/myprojects',
     name: 'myprojects',
     component: () => import(/*webpackChunkName: "control" */'../views/users/MyProjects.vue')
-  }
+  },
   //** USER ROUTES **//
 
   // ADMIN ROUTES //
-
+  {
+    path: '/admin/status',
+    name: 'admin/status',
+    component: () => import(/*webpackChunkName: "admin/status" */'../views/admin/status/Status.vue')
+  }
   //** ADMIN ROUTES **//
 ]
 

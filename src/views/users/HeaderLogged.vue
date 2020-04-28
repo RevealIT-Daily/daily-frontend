@@ -63,7 +63,7 @@
       
        <v-list>
        <div class="text-center">
-            <v-list-item link to="/users/start">
+            <v-list-item link to="/admin/status">
               <v-list-item-icon>
                 <v-icon>assignment</v-icon>
               </v-list-item-icon>
