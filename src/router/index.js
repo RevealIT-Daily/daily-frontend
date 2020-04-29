@@ -90,6 +90,11 @@ const routes = [
     path: '/admin/account_type',
     name: 'admin/account_type',
     component: () => import(/*webpackChunkName: "admin/account_type"*/'../views/admin/account_type/AccountType.vue')
+  },
+  {
+    path: '/admin/default_role',
+    name: 'admin/default_role',
+    component: () => import(/*webpackChunkName: "admin/default_role"*/'../views/admin/default_role/DefaultRole.vue')
   }
   //** ADMIN ROUTES **//
 ]

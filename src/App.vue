@@ -16,7 +16,7 @@
     <v-toolbar class="primary">
     <v-spacer></v-spacer>
      <v-toolbar-title class="mr-6">
-        Logobussines
+        <img src='./assets/logoEmpresa.jpg' width="260" height="60">
       </v-toolbar-title>
     </v-toolbar>
         </v-row>

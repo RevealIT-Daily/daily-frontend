@@ -1,5 +1,5 @@
 <template>
-  <div class="AccountType">
+  <div class="DefaultRole">
     <v-container>
       <v-row>
         <v-col cols="12" xs="12" md="12" sm="12">
@@ -7,7 +7,7 @@
           <v-card>
             <v-card-title>
               <v-toolbar flat color="white">
-                <v-btn color="primary" dark @click="ShowRegisterForm">New Account Type</v-btn>
+                <v-btn color="primary" dark @click="ShowRegisterForm">New Default Role</v-btn>
 
                 <v-spacer></v-spacer>
 
@@ -40,9 +40,7 @@
                   <v-card-text>
                     <v-container>
                       <v-row>
-                        <v-col cols="12">
-                          <v-text-field v-model="editedItem.name" label="Name"></v-text-field>
-                        </v-col>
+                        
                         <v-col cols="12">
                           <v-text-field v-model="editedItem.description" label="Description"></v-text-field>
                         </v-col>
@@ -65,9 +63,7 @@
                   <v-card-text>
                     <v-container>
                       <v-row>
-                          <v-col cols="12">
-                          <v-text-field v-model="editedItem.name" label="Name"></v-text-field>
-                        </v-col>
+                          
                         <v-col cols="12">
                           <v-text-field v-model="editedItem.description" label="Description"></v-text-field>
                         </v-col>
@@ -77,7 +73,7 @@
 
                   <v-card-actions>
                     <v-btn color="blue" text @click="close">Cancel</v-btn>
-                    <v-btn color="blue" text @click="updateAccountType">Save</v-btn>
+                    <v-btn color="blue" text @click="updateDefaultRole">Save</v-btn>
                   </v-card-actions>
                 </v-card>
               </v-dialog>
@@ -85,7 +81,7 @@
               <v-data-table
                 :search="search"
                 :headers="headers"
-                :items="accountType"
+                :items="defaultRole"
                 :page.sync="page"
                 :items-per-page="itemsPerPage"
                 class="elevation-1"
@@ -108,9 +104,9 @@
 
 
 <script>
-import api from "./functions/account_type.js";
+import api from "./functions/default_role.js";
 export default {
-  name: "AccountType",
+  name: "DefaultRole",
   data: () => ({
     search: "",
     page: 1,
@@ -120,14 +116,13 @@ export default {
     dialogEdit: false,
     headers: [
       { text: "ID", value: "id", align: "center" },
-      { text: "Name", value: "name", align: "center" },
       { text: "Description", value: "description", align: "center" },
       { text: "Actions", value: "actions", align: "center" }
     ],
-    accountType: [],
+    defaultRole: [],
     editedIndex: -1,
     editedItem: {
-        name:"",
+      
       description: "",
       status_id: "1"
 
@@ -138,12 +133,12 @@ export default {
   }),
 
   mounted() {
-    this.getAccountType();
+    this.getDefaultRole();
   },
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "New Account Type" : "Edit Account Type";
+      return this.editedIndex === -1 ? "New Default Role" : "Edit Default Role";
     }
   },
 
@@ -159,13 +154,13 @@ export default {
 
   methods: {
     initialize() {
-      this.accountType;
+      this.defaultRole;
     },
     ShowRegisterForm() {
       this.dialog = true;
     },
     editItem(item) {
-      this.editedIndex = this.accountType.indexOf(item);
+      this.editedIndex = this.defaultRole.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialogEdit = true;
     },
@@ -187,10 +182,10 @@ export default {
 
     save() {
         console.log("Aqui esta");
-      api.createAccountType(this.editedItem).then(response => {
+      api.createDefaultRole(this.editedItem).then(response => {
         if (response.status === 201) {
-          alert("AccountType added");
-          this.getAccountType();
+          alert("DefaultRole added");
+          this.getDefaultRole();
           this.close();
         } else {
           alert("Error with the request");
@@ -198,19 +193,19 @@ export default {
       });
     },
 
-    getAccountType() {
-      api.getAccountType().then(response => {
-        this.accountType = response.data.data;
+    getDefaultRole() {
+      api.getDefaultRole().then(response => {
+        this.defaultRole = response.data.data;
       });
     },
 
-    updateAccountType() {
+    updateDefaultRole() {
       api
-        .updateAccountType(this.editedItem.id, this.editedItem)
+        .updateDefaultRole(this.editedItem.id, this.editedItem.description)
         .then(response => {
             if(response.status === 200){
-                alert("AccountType updated");
-                this.getAccountType();
+                alert("DefaultRole updated");
+                this.getDefaultRole();
                 this.close();
             }else{
                 alert("Error with the request");

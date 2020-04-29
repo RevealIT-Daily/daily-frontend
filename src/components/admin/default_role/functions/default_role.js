@@ -3,23 +3,23 @@ import axios from 'axios';
 const BASE_URL = "http://74.208.169.91:90/api";
 
 var methods = {
-    async getAccountType() {
+    async getDefaultRole() {
         try {
             const response = await axios
-                .get(`${BASE_URL}/accountType`);
+                .get(`${BASE_URL}/defaultRole`);
             return response;
         }
         catch (err) {
             return console.log(err);
         }
     },
-    async createAccountType(accountType) {
+    async createDefaultRole( defaultRole) {
         try {
             const response = await axios
-                .post(`${BASE_URL}/accountType`, {
-                    "name": accountType.name,
-                    "description": accountType.description,
-                    "status_id":accountType.status_id
+                .post(`${BASE_URL}/defaultRole`, {
+                   
+                    "description":  defaultRole.description,
+                    "status_id": defaultRole.status_id
                 });
             return response;
         }
@@ -27,13 +27,12 @@ var methods = {
             return console.log(err);
         }
     },
-    async updateAccountType(id, item) {
+    async updateDefaultRole(id, description) {
         try {
             const response = await axios
-                .put(`${BASE_URL}/accountType`, {
+                .put(`${BASE_URL}/defaultRole`, {
                     "id": id,
-                    "name":item.name,
-                    "description": item.description
+                    "description": description
                 });
             return response;
         } catch (err) {
