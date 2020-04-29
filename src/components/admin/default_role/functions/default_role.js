@@ -17,7 +17,7 @@ var methods = {
         try {
             const response = await axios
                 .post(`${BASE_URL}/defaultRole`, {
-                    "name": defaultRole.name,
+                   
                     "description":  defaultRole.description,
                     "status_id": defaultRole.status_id
                 });

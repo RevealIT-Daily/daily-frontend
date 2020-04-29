@@ -40,9 +40,7 @@
                   <v-card-text>
                     <v-container>
                       <v-row>
-                        <v-col cols="12">
-                          <v-text-field v-model="editedItem.name" label="Name"></v-text-field>
-                        </v-col>
+                        
                         <v-col cols="12">
                           <v-text-field v-model="editedItem.description" label="Description"></v-text-field>
                         </v-col>
@@ -65,9 +63,7 @@
                   <v-card-text>
                     <v-container>
                       <v-row>
-                          <v-col cols="12">
-                          <v-text-field v-model="editedItem.name" label="Name"></v-text-field>
-                        </v-col>
+                          
                         <v-col cols="12">
                           <v-text-field v-model="editedItem.description" label="Description"></v-text-field>
                         </v-col>
@@ -126,7 +122,7 @@ export default {
     defaultRole: [],
     editedIndex: -1,
     editedItem: {
-        name:"",
+      
       description: "",
       status_id: "1"
 
