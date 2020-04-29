@@ -120,6 +120,7 @@ export default {
     dialogEdit: false,
     headers: [
       { text: "ID", value: "id", align: "center" },
+      { text: "Name", value: "name", align: "center" },
       { text: "Description", value: "description", align: "center" },
       { text: "Actions", value: "actions", align: "center" }
     ],
@@ -205,7 +206,7 @@ export default {
 
     updateAccountType() {
       api
-        .updateAccountType(this.editedItem.id, this.editedItem.description)
+        .updateAccountType(this.editedItem.id, this.editedItem)
         .then(response => {
             if(response.status === 200){
                 alert("AccountType updated");

@@ -27,12 +27,13 @@ var methods = {
             return console.log(err);
         }
     },
-    async updateAccountType(id, description) {
+    async updateAccountType(id, item) {
         try {
             const response = await axios
                 .put(`${BASE_URL}/accountType`, {
                     "id": id,
-                    "description": description
+                    "name":item.name,
+                    "description": item.description
                 });
             return response;
         } catch (err) {
