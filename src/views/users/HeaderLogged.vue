@@ -76,7 +76,7 @@
               </v-list-item-icon>
               <v-list-item-title><h4>Account Type</h4></v-list-item-title>
             </v-list-item>
-            <v-list-item link to="/users/execution">
+            <v-list-item link to="/admin/default_role">
               <v-list-item-icon>
                 <v-icon>assignment</v-icon>
               </v-list-item-icon>
