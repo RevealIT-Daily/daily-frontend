@@ -15,8 +15,8 @@
         <v-row>
     <v-toolbar class="primary">
     <v-spacer></v-spacer>
-     <v-toolbar-title class="mr-6">
-        <img src='./assets/logoEmpresa.jpg' width="260" height="60">
+     <v-toolbar-title class="mr-10 mt-3">
+        <img src='./assets/logoEmpresa.jpg' width="230" height="40  ">
       </v-toolbar-title>
     </v-toolbar>
         </v-row>
