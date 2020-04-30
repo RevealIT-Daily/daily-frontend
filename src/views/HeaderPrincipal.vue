@@ -2,8 +2,8 @@
     <div>
          <v-row>
      <v-toolbar color="primary">
-      <v-toolbar-title class="ml-5">
-        <img src='../assets/logoEmpresa.jpg' width="260" height="60">
+      <v-toolbar-title class="ml-5 mt-3">
+        <img src='../assets/logoEmpresa.jpg' width="230" height="45">
       </v-toolbar-title >
        <v-btn text color="white" class="ml-5"  x-large to="/">
        Home
