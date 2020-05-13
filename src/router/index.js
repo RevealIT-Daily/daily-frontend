@@ -95,6 +95,17 @@ const routes = [
     path: '/admin/default_role',
     name: 'admin/default_role',
     component: () => import(/*webpackChunkName: "admin/default_role"*/'../views/admin/default_role/DefaultRole.vue')
+  },
+  //**PASSWORD ROUTES **/
+  {
+    path: '/ForgotPassword',
+    name: '/ForgotPassword',
+    component: () => import(/*webpackChunkName: "/ForgotPassword"*/'../views/ForgotPassword.vue')
+  },
+  {
+    path: '/ResetPassword',
+    name: '/ResetPassword',
+    component: () => import(/*webpackChunkName: "/ResetPassword"*/'../views/ResetPassword.vue')
   }
   //** ADMIN ROUTES **//
 ]
