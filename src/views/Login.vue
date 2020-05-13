@@ -27,7 +27,12 @@
                         <v-text-field label="Password"   type="password"
                          class="mt-8 pl-2 pr-2"
                         prepend-icon="enhanced_encryption"></v-text-field>
-
+                     <div class="text-center">
+                       
+                        <router-link to="/ForgotPassword">
+                             <span class="dark--text"><b>Forgot Password?</b></span>  
+                        </router-link>
+                    </div>
                         
                         <v-btn x-medium color="#1779ba"  v-on:click="login" class="mt-8 mb-6">
                         <v-icon  color="white">person_outline</v-icon>
@@ -38,7 +43,7 @@
                      <div class="text-center">
                         <b> Don't have an account yet? </b> 
                         <router-link to="/signup">
-                            <span class="blue--text"><b>Sign up</b></span>
+                            <span ><b>Sign up</b></span>
                         </router-link>
                     </div>
             </v-card>
