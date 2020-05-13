@@ -22,7 +22,7 @@
                                      class="mt-6 pl-2 pr-2"
                                     prepend-inner-icon="lock"
                                     v-validate="'required|min:6'"
-                                    
+
                                     ></v-text-field>  
                                      <v-text-field label="Confirm Password" hide-details="auto" type="password" 
                                      class="mt-6 pl-2 pr-2"
