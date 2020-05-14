@@ -43,7 +43,7 @@
                 <span id="confirmPassword"  class="red--text float-left"></span>
                 
 
-                <v-btn x-medium color="#1779ba" class="mt-10 mb-4" @click="submit()">
+                <v-btn x-medium color="#1779ba" class="mt-10 mb-4" @click="submit()" :disabled="isDisabled">
                   <v-icon color="white">supervisor_account</v-icon>
                   <span class="white--text">Sign Up</span>
                 </v-btn>
@@ -83,24 +83,12 @@ export default {
       confirmPasswordRules: [
         v => !!v || "Confirm password is required",
         v => (v && v.length >= 8) || "Password must be more than 8 characters"
-      ]
+      ],
+      errors: []
     };
   },
   methods: {
     submit() {
-      
-      if(!this.email)
-        return document.getElementById('email').textContent="Please, write email";
-      
-      if(!this.password)
-        return document.getElementById('password').textContent="Plase, write Password";
-      
-      if(!this.confirmPassword)
-        return document.getElementById('confirmPassword').textContent="Plase, write Confirm Password";
-      
-      
-        
-
       if (this.password !== this.confirmPassword)
         return alert("Please, write the same password");
       
@@ -125,6 +113,25 @@ export default {
           this.resetForm();
         }
       });
+    }
+  },
+  computed:{
+    isDisabled(){
+       
+       let res=false;
+
+      
+
+      if(!this.email)
+        res=true;
+      
+      if(!this.password)
+        res=true;
+      
+      if(!this.confirmPassword)
+       res=true
+          
+        return res;
     }
   }
 };
