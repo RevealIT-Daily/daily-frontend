@@ -12,15 +12,16 @@
             <v-form ref="signUpForm">
               <v-card-text>
                 <v-text-field
-                  label="Email"
+                  label="Email *"
                   hide-details="auto"
                   class="mt-6 pl-2 pr-2"
                   prepend-inner-icon="mail"
                   v-model="email"
                   :rules="emailRules"
                 ></v-text-field>
+                <span id="email"  class="red--text float-left"></span>
                 <v-text-field
-                  label="Password"
+                  label="Password *"
                   hide-details="auto"
                   type="password"
                   class="mt-8 pl-2 pr-2"
@@ -28,15 +29,19 @@
                   v-model="password"
                   :rules="passwordRules"
                 ></v-text-field>
+                <span id="password" class="red--text float-left"></span>
                 <v-text-field
-                  label="Confirm Password"
+                  label="Confirm Password *"
                   hide-details="auto"
                   type="password"
                   class="mt-8 pl-2 pr-2"
                   prepend-inner-icon="enhanced_encryption"
                   v-model="confirmPassword"
                   :rules="confirmPasswordRules"
-                ></v-text-field>
+                >
+                </v-text-field>
+                <span id="confirmPassword"  class="red--text float-left"></span>
+                
 
                 <v-btn x-medium color="#1779ba" class="mt-10 mb-4" @click="submit()">
                   <v-icon color="white">supervisor_account</v-icon>
@@ -83,8 +88,23 @@ export default {
   },
   methods: {
     submit() {
+      
+      if(!this.email)
+        return document.getElementById('email').textContent="Please, write email";
+      
+      if(!this.password)
+        return document.getElementById('password').textContent="Plase, write Password";
+      
+      if(!this.confirmPassword)
+        return document.getElementById('confirmPassword').textContent="Plase, write Confirm Password";
+      
+      
+        
+
       if (this.password !== this.confirmPassword)
         return alert("Please, write the same password");
+      
+      
 
        this.registerAccount();
     },
