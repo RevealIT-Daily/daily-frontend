@@ -192,7 +192,6 @@ export default {
         },
 
         save() {
-            console.log("Aqui esta");
             api.createAccountType(this.editedItem).then(response => {
                 if (response.status === 201) {
                     alert("AccountType added");
